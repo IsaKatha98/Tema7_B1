@@ -37,7 +37,7 @@ public class Libro {
 	}
 	
 	/**
-	 * Método constructor de la clase Libro.
+	 * Constructor de la clase Libro con parámetros.
 	 * 
 	 * @param titulo
 	 * @param autor
@@ -67,7 +67,7 @@ public class Libro {
 		
 		boolean prestamo=false;
 		
-		if (numEjemplares>numEjemplaresPrestados) {
+		if (numEjemplares>=numEjemplaresPrestados) {
 			
 			numEjemplaresPrestados++;
 			prestamo=true;
@@ -96,5 +96,18 @@ public class Libro {
 		}
 		
 		return devolucion;
+	}
+	
+	public String toString () {
+		
+		String result="";
+		
+		result+="Título del libro: "+titulo+"\n";
+		result+="Autor/a del libro: "+autor+"\n";
+		result+="Número de ejemplares disponibles: "+numEjemplares+"\n";
+		result+="Número de ejemplares prestados: "+numEjemplaresPrestados+"\n";
+		
+		return result;
+		
 	}
 }
