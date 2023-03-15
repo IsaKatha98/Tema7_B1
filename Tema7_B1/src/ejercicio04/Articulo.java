@@ -60,7 +60,7 @@ public class Articulo {
 		
 		double precioDescuento; 
 		
-		precioDescuento=getPVP()-(getPVP()-descuento);
+		precioDescuento=getPVP()-(getPVP()*descuento);
 		
 		return precioDescuento;
 		

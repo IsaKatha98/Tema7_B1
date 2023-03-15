@@ -13,14 +13,13 @@ public class Main {
 		
 		System.out.println(art);
 		
-		System.out.println(precio);		
-		System.out.println(precioDescuento);
+		System.out.println("Este es el precio de un artículo: "+precio);		
+		System.out.println("Este es el precio con descuento: "+precioDescuento);
 		
 		art.vender(5);
 		
-	
-		
-		
+		System.out.println(art);
+			
 	}
 
 }
