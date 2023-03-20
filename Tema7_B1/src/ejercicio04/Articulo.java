@@ -2,15 +2,23 @@ package ejercicio04;
 
 public class Articulo {
 	
-	String nombre;
-	double precio;
-	static final double IVA=0.21;
-	int cuantosQuedan;
+	private String nombre;
+	private double precio;
+	public static final double IVA=0.21;
+	private int cuantosQuedan;
 	
 	public Articulo (String nombre, double precio, int cuantosQuedan) {
 		
-		this.nombre=nombre;
+		if (!nombre.isEmpty()&&nombre!=null) {
+			
+			this.nombre=nombre;
 		
+		} else {
+			
+			System.out.println("El nombre introducido no es válido.");
+		
+		}
+	
 		if (precio>0) {
 			
 			this.precio=precio;
@@ -20,17 +28,15 @@ public class Articulo {
 			System.out.println("El precio no puede ser negativo.");
 		}
 		
-		if (cuantosQuedan>0) {
+		if (cuantosQuedan>=0) {
 			
 			this.cuantosQuedan=cuantosQuedan;
 			
 		} else {
 			
-			//(String)this.cuantosQuedan="El precio no puede ser negativo.";
+			System.out.println("El precio no puede ser negativo.");
 			
 		}
-		
-		
 		
 	}
 	
@@ -38,10 +44,10 @@ public class Articulo {
 		
 		String result="";
 		
-		result+="Nombre: "+nombre+"\n";
-		result+="Precio: "+precio+"\n";
+		result+="Nombre: "+this.nombre+"\n";
+		result+="Precio: "+this.precio+"\n";
 		result+="IVA: "+IVA+"\n";
-		result+="Cantidades en stock: "+cuantosQuedan+"\n";
+		result+="Cantidades en stock: "+this.cuantosQuedan+"\n";
 		
 		return result;
 		
@@ -51,7 +57,7 @@ public class Articulo {
 		
 		double PVP;
 		
-		PVP=precio+(precio*IVA);
+		PVP=this.precio+(this.precio*IVA);
 		
 		return PVP;
 	}
@@ -59,8 +65,9 @@ public class Articulo {
 	public double getPVPDescuento (double descuento) {
 		
 		double precioDescuento; 
+		double precioPVP=getPVP();
 		
-		precioDescuento=getPVP()-(getPVP()*descuento);
+		precioDescuento=precioPVP-(precioPVP*descuento);
 		
 		return precioDescuento;
 		
@@ -70,9 +77,9 @@ public class Articulo {
 		
 		boolean venta=false;
 		
-		if (cuantosQuedan>0&&cuantosQuedan>=cantidad) {
+		if (this.cuantosQuedan>=cantidad) {
 			
-			cuantosQuedan-=cantidad;
+			this.cuantosQuedan-=cantidad;
 			venta=true;
 		}
 	
@@ -81,7 +88,7 @@ public class Articulo {
 	
 	public void almacenar (int cantidad) {
 		
-		cuantosQuedan+=cantidad;
+		this.cuantosQuedan+=cantidad;
 	}
 	
 }
