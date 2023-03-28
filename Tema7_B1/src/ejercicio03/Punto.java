@@ -45,12 +45,12 @@ public class Punto {
 		return desplaza;
 	}
 	
-	public int distancia (Punto p) {
+	/*public int distancia (Punto p) {
 		
 		int distancia;
 		
 		
 		
-		return distancia;
-	}
+	
+	}*/
 }
