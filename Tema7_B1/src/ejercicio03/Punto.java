@@ -1,11 +1,22 @@
 package ejercicio03;
 
 public class Punto {
-	
+	/**
+	 * 
+	 */
 	int x;
 	
+	/**
+	 * Atributo y, que hace referencia a un punto en el eje Y
+	 */
 	int y;
 
+	/**
+	 * Constructor de la clase Punto con parámetros
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	public Punto(int x, int y) {
 		
 		this.x=x;

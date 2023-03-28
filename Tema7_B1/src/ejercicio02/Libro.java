@@ -98,6 +98,12 @@ public class Libro {
 		return devolucion;
 	}
 	
+	/**
+	 * 
+	 * Método que pasa a String todos los atributos y los devuelve a modo de mensaje
+	 * 
+	 * @return result mensaje tipo
+	 */
 	public String toString () {
 		
 		String result="";
