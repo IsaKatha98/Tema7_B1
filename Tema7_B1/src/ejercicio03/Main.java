@@ -8,6 +8,15 @@ public class Main {
 		
 		System.out.println(p);
 
+		p.desplaza(4, 6);
+		
+		System.out.println(p);
+		
+		Punto p2= new Punto (3,4);
+		
+		
+		
+		System.out.println(p.distancia(p2));
 	}
 
 }

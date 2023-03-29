@@ -5,7 +5,7 @@ public class Punto {
 	 * 
 	 */
 	int x;
-	
+
 	/**
 	 * Atributo y, que hace referencia a un punto en el eje Y
 	 */
@@ -18,50 +18,58 @@ public class Punto {
 	 * @param y
 	 */
 	public Punto(int x, int y) {
-		
-		this.x=x;
-		this.y=y;
-		
+
+		this.x = x;
+		this.y = y;
+
 	}
-	
-	public String toString () {
-		
-		String result="";
-		
-		result+= x+y;
-		
+
+	public String toString() {
+
+		String result = "";
+
+		result = "[x = " + this.x + ", y = " + this.y + " ]";
+
 		return result;
-		
+
 	}
-	
-	//Aquí va la función del set.
-	
-	
+
+	// Aquí va la función del set.
+
 	/**
+	 * Método que desplaza las coordenadas iniciales, sumándole los valores pasado
+	 * por parámetros.
 	 * 
-	 * @param dx
-	 * @param dy
-	 * @return
+	 * @param dx distancia que desplaza la coordenada x
+	 * @param dy distancia que desplaza la coordenada y
+	 * @return coordenadas desplazadas
 	 */
-	public int desplaza (int dx, int dy) {
-		
+	public int desplaza(int dx, int dy) {
+
 		int desplaza;
-		
-		x+=dx;
-		
-		y+=dy;
-		
-		desplaza=x+y;
-							
+
+		x += dx;
+
+		y += dy;
+
+		desplaza = x + y;
+
 		return desplaza;
 	}
-	
-	/*public int distancia (Punto p) {
-		
-		int distancia;
-		
-		
-		
-	
-	}*/
+
+	/**
+	 * Método que calcula la distancia entre dos puntos.
+	 * 
+	 * @param p
+	 * @return la distancia entre dos puntos.
+	 */
+	public double distancia(Punto p) {
+
+		double distancia;
+
+		distancia = Math.sqrt(Math.pow((p.x - x), 2) + Math.pow((p.y - y), 2));
+
+		return distancia;
+
+	}
 }
